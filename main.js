@@ -1,3 +1,5 @@
+'use strict';
+
 function addItem() {
     $('#js-shopping-list-form').on(
         'submit',
@@ -6,7 +8,7 @@ function addItem() {
             console.log(e)
             let newItem = $('#shopping-list-entry').val()
             console.log(newItem)
-            $('.shopping-list').append(`
+            $('.shopping-list').prepend(`
         <li>
             <span class="shopping-item">${newItem}</span>
             <div class="shopping-item-controls">
@@ -19,9 +21,9 @@ function addItem() {
             </div>
         </li>`)
             $('#shopping-list-entry').val('')
+            buttonFunctions(); 
         }
     )
-    $(buttonFunctions);
 }
 
 
@@ -41,5 +43,4 @@ function buttonFunctions() {
 
 
 $(addItem);
-
 $(buttonFunctions);
